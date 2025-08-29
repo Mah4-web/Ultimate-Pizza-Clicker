@@ -19,7 +19,20 @@ async function getUpgrades() {
     const response = await fetch("https://cookie-upgrade-api.vercel.app/api/upgrades")
     const data = await response.json();
     console.log(data);
+    
+  // Replace all "Cookie" with "Pizza Slice" in the entire JSON string
+    const pizzaData = JSON.stringify(data).replaceAll("Cookie", "Pizza Slice");
+
+  // Convert it back to a real JavaScript object/array
+    const pizzaUpgrades = JSON.parse(pizzaData);
+
+    console.log("Pizza Slice Upgrades:", pizzaUpgrades);
 }
+
+getUpgrades();
+
+  
+
 //API url: 
 
 //To create multiple elements in a more convenient way, loops are your friend.
