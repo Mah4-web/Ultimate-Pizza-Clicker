@@ -1,0 +1,1 @@
+console.log("Hello World, I Am Building My First Clicking (IDLE) Game!",);
