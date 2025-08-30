@@ -10,19 +10,42 @@
 <body>
     <header>
 <h1>🍕 Ultimate Pizza Clicker 🍕</h1>
+<div class="controls">
+<button id="toggle-sound">🔊 Sound: On</button>
+<button id="show-stats">📊 Show Stats</button>
+</div>
 </header>
+
+<main>
+<div id="left">
+<div class="pizza-wrap">
+<div class="spin-bg"></div>
     <!-- a clickable element -->
     <img id = "pizza" src="./images/delicious-pizza.png" alt="a delicious pizza" />
+
+    </div>
+
+</div>
     <!-- the cookie total and the cps (cookies per second) -->
-    <div class="counts">
-<p>🍕 Pizza slices: <span id="slices">0</span></p>
-<p>⚡ Slices per second: <span id="sps">0</span></p>
+    <div class="stats">
+<p style="margin:6px 0">🍕 Pizza slices: <span id="slices">0</span></p>
+<p style="margin:6px 0">⚡ Slices per second: <span id="sps">0.01</span></p>
 </div>
-<div id="JSON"></div>
-    <!-- Shop  -->
-    <div class="shop">
+</div>
+</div>
+
+<div id="right">
+<div class="shop">
 <h2>Pizza Shop</h2>
-<div id="upgrades"></div>
+<div class="upgrade-list" id="upgrades"></div>
 </div>
+</div>
+</main>
+</div>
+<footer>
+<div class="copyright">
+            &copy; 2025 Ultimate Pizza Clicker. All rights reserved.
+        </div>
+        </footer>
 </body>
 </html>
