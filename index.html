@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="app.js" defer></script>
-    <title>🍕 Ultimate Pizza Clicker</title>
+    <script type="module" src="app.js"></script>
+    <script type="module" src="game.js"></script>
+
+    <title>Ultimate Pizza Clicker</title>
 </head>
 <body>
     <header>
@@ -19,15 +21,15 @@
 <main>
 <div id="left">
 <div class="pizza-wrap">
-<div class="spin-bg"></div>
-    <!-- a clickable element -->
-    <img id = "pizza" src="./images/delicious-pizza.png" alt="a delicious pizza" />
+    <div class="spin-bg"></div>
+    <img id="pizza" src="./images/delicious-pizza.png" alt="delicious pizza" />
+</div>
 
-    </div>
+
 
 </div>
-    <!-- the cookie total and the cps (cookies per second) -->
-    <div class="stats">
+
+<div class="stats">
 <p style="margin:6px 0">🍕 Pizza slices: <span id="slices">0</span></p>
 <p style="margin:6px 0">⚡ Slices per second: <span id="sps">0.01</span></p>
 </div>
@@ -36,11 +38,23 @@
 
 <div id="right">
 <div class="shop">
-<h2>Pizza Shop</h2>
+<h2>🍕 Pizza Shop</h2>
 <div class="upgrade-list" id="upgrades"></div>
 </div>
 </div>
 </main>
+
+<div id="toast" class="toast"></div>
+
+<div id="modalBackdrop" 
+    class="modal-backdrop"> 
+    <div class="modal" id="modal">
+        
+<h3>Snapshot</h3>
+<p id="modalSlices">Slices: 0</p>
+<p id="modalSps">Slices / sec: 1</p>
+<div style="margin-top:10px"><button id="closeModal">Close</button></div>
+</div>
 </div>
 <footer>
 <div class="copyright">

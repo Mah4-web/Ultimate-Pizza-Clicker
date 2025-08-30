@@ -113,3 +113,96 @@ main {
     flex-direction: column;
     gap: 20px;
 }
+
+.stats, .shop{ 
+    background:rgba(255,248,231,.96);
+    padding:20px; 
+    border-radius:14px;
+    box-shadow:0 8px 24px rgba(0,0,0,.12);
+    margin-top: 20px;
+}
+
+.stats{ 
+    max-width: 320px;
+    width: 100%;
+    text-align:center;
+}
+
+.shop {
+    background: rgba(255, 248, 231, 0.96);
+    padding: 18px;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    font-size: 18px;
+    height: fit-content;
+    max-height: 80vh;
+    overflow: auto;
+}
+
+.upgrade-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.upgrade-btn {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    background: linear-gradient(180deg, #fff, #fff6ee);
+    cursor: pointer;
+}
+
+.upgrade-btn img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.upgrade-cost {
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.toast{ position:fixed; 
+    left:50%; transform:translateX(-50%);
+    bottom:26px;
+    background:rgba(0,0,0,.82);
+    color:#fff; 
+    padding:10px 18px;
+        border-radius:12px; 
+        opacity:0;
+        transition:opacity .25s
+        }
+.toast.show{ opacity:1 }
+
+.modal-backdrop{ 
+    position:fixed;
+    inset:0;
+    display:none; 
+    align-items:center;
+    justify-content:center;
+    background:rgba(0,0,0,.45);
+    z-index:200 }
+.modal{
+    background:#fff;
+    padding:18px 22px; 
+    border-radius:12px;
+    box-shadow:0 12px 40px rgba(0,0,0,.3);
+    min-width:240px;
+    text-align:center }
+
+@media (max-width:900px){ 
+    main{ 
+        flex-direction:column; 
+        align-items:center 
+    } 
+    #right{ 
+        width:100%; 
+        max-width:none 
+    } 
+}
