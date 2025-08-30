@@ -1,58 +1,14 @@
-@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
 
+:root{ --primary:#ff6347; --accent:#ffd27a; --bg1:#f8e3c0; --bg2:#f1c27d; }
+*{box-sizing:border-box}
 body {
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-background: radial-gradient(circle at top, #f8e3c0, #f1c27d);
-color: #333;
-margin: 0;
-padding: 0;
-}
-body {
-text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-header {
-background: linear-gradient(to right, #ff6347, #ff4500);
-color: white;
-padding: 20px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-box-shadow: 0 5px 10px rgba(0,0,0,0.3);
-}
-
-header h1 {
-margin: 0;
-font-size: 2rem;
-text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-#pizza {
-width: 250px;
-cursor: pointer;
-transition: transform 0.1s, box-shadow 0.2s;
-border-radius: 50%;
-box-shadow: 0 0 30px rgba(255, 200, 0, 0.5);
-}
-
-#pizza:active {
-transform: scale(0.9);
-box-shadow: 0 0 40px rgba(255, 230, 0, 0.8);
-}
-
-.counts, .shop {
-background: rgba(255, 248, 231, 0.95);
-border-radius: 15px;
-padding: 20px;
-box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-text-align: center;
-margin-top: 20px;
-}
-
-h2 {
-margin-bottom: 15px;
-color: #d84315;
-text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: radial-gradient(circle at top, var(--bg1), var(--bg2));
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -112,6 +68,85 @@ main {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.pizza-wrap {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#pizza {
+    position: relative;
+    z-index: 2;
+    width: 300px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
+}
+
+.spin-bg {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        #ffcc33 0deg 10deg,
+        #ff6600 10deg 20deg,
+        #ffcc33 20deg 30deg,
+        #ff6600 30deg 40deg,
+        #ffcc33 40deg 50deg,
+        #ff6600 50deg 60deg,
+        #ffcc33 60deg 70deg,
+        #ff6600 70deg 80deg,
+        #ffcc33 80deg 90deg,
+        #ff6600 90deg 100deg,
+        #ffcc33 100deg 110deg,
+        #ff6600 110deg 120deg,
+        #ffcc33 120deg 130deg,
+        #ff6600 130deg 140deg,
+        #ffcc33 140deg 150deg,
+        #ff6600 150deg 160deg,
+        #ffcc33 160deg 170deg,
+        #ff6600 170deg 180deg,
+        #ffcc33 180deg 190deg,
+        #ff6600 190deg 200deg,
+        #ffcc33 200deg 210deg,
+        #ff6600 210deg 220deg,
+        #ffcc33 220deg 230deg,
+        #ff6600 230deg 240deg,
+        #ffcc33 240deg 250deg,
+        #ff6600 250deg 260deg,
+        #ffcc33 260deg 270deg,
+        #ff6600 270deg 280deg,
+        #ffcc33 280deg 290deg,
+        #ff6600 290deg 300deg,
+        #ffcc33 300deg 310deg,
+        #ff6600 310deg 320deg,
+        #ffcc33 320deg 330deg,
+        #ff6600 330deg 340deg,
+        #ffcc33 340deg 350deg,
+        #ff6600 350deg 360deg
+    );
+    filter: blur(3px);
+    animation: spin 12s linear infinite;
+    z-index: 0;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#pizza:active { 
+    transform:scale(.97)
 }
 
 .stats, .shop{ 
@@ -174,10 +209,11 @@ main {
     background:rgba(0,0,0,.82);
     color:#fff; 
     padding:10px 18px;
-        border-radius:12px; 
-        opacity:0;
-        transition:opacity .25s
-        }
+    border-radius:12px; 
+    opacity:0;
+    transition:opacity .25s
+    }
+
 .toast.show{ opacity:1 }
 
 .modal-backdrop{ 
@@ -187,7 +223,8 @@ main {
     align-items:center;
     justify-content:center;
     background:rgba(0,0,0,.45);
-    z-index:200 }
+        z-index:200 }
+
 .modal{
     background:#fff;
     padding:18px 22px; 
@@ -201,8 +238,53 @@ main {
         flex-direction:column; 
         align-items:center 
     } 
+
     #right{ 
         width:100%; 
         max-width:none 
     } 
+}
+
+.slice-particle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 100;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    opacity: 1;
+    animation: flyUpAndFade 1s ease-out forwards;
+}
+
+.slice-particle img {
+    height: 30px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+@keyframes flyUpAndFade {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -200%) scale(0.5);
+        opacity: 0;
+    }
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    padding-bottom: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: #888;
 }

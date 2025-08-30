@@ -1,6 +1,6 @@
 import { state, saveGame } from './game.js';
-// UI logic and Eventlisteners
 
+// UI logic and Eventlisteners
 
 // DOM Elements
 const pizza = document.getElementById('pizza');
@@ -45,7 +45,7 @@ function attach() {
     
         const particle = document.createElement("div");
         particle.classList.add("slice-particle");
-        particle.innerHTML = `<img src="pizza-slice.png" alt="pizza slice"/>+1`;
+        particle.innerHTML = `<img src="./images/pizza-slice.png" alt="pizza slice"/>+1`;
     
         document.body.appendChild(particle);
     
